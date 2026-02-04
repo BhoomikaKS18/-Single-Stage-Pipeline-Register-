@@ -1,2 +1,5 @@
 # -Single-Stage-Pipeline-Register-
+The Task: Implement a single-stage pipeline register in SystemVerilog using a standard valid/ready handshake. 
+The Logic: The module sits between an input and output interface, accepts data when in_valid and in_ready are asserted, presents stored data on the output with out_valid, and correctly handles backpressure without data loss or duplication. The design should be fully synthesizable and reset to a clean empty state.
+
 This project implements a single-stage pipeline register using a standard valid/ready handshake protocol. The module buffers one data word between an upstream producer and a downstream consumer. Data is captured when both in_valid and in_ready are high, and the stored value is presented on the output with out_valid. The design correctly handles backpressure by preventing new data from overwriting stored data until the downstream side asserts out_ready. On reset, the pipeline register is cleared to an empty state. The design is fully synthesizable and ensures no data loss or duplication.
